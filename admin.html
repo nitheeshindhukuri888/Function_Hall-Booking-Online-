@@ -1,8 +1,0 @@
-<!DOCTYPE html>
-<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin | HallBook</title><link rel="stylesheet" href="/css/style.css"></head>
-<body><header class="nav"><a class="brand" href="/">Hall<span>Book</span></a><nav><a href="/">Home</a></nav></header>
-<main class="section narrow"><div class="form-card"><p class="eyebrow">ADMIN</p><h1>Booking management</h1>
-<form id="adminForm"><input id="email" type="email" placeholder="Admin email" required><input id="password" type="password" placeholder="Admin password" required><button>Load bookings</button></form><div id="result"></div></div></main>
-<script>
-adminForm.onsubmit=async e=>{e.preventDefault();const l=await fetch('/api/admin/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email.value,password:password.value})});const x=await l.json();if(!x.success){result.textContent=x.message;return}const r=await fetch('/api/admin/bookings');const bs=await r.json();result.innerHTML='<hr>'+bs.map(b=>`<article class="booking"><b>#${b.id}</b> — ${b.eventDate} — ${b.customerName} — ₹${Number(b.totalAmount).toLocaleString('en-IN')} — ${b.paymentStatus}</article>`).join('')}</article>`).join('');};
-</script></body></html>
