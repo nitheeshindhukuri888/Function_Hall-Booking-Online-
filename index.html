@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HallBook | Function Hall Booking</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="/">Hall<span>Book</span></a>
+  <nav><a href="#halls">Halls</a><a href="#how">How it works</a><a href="/login.html">Login</a><a class="btn small" href="/register.html">Register</a></nav>
+</header>
+
+<section class="hero">
+  <div>
+    <p class="eyebrow">WEDDINGS • EVENTS • CELEBRATIONS</p>
+    <h1>Find a function hall for your <span>perfect event.</span></h1>
+    <p class="hero-text">Search venues, check availability, book online and pay securely.</p>
+    <div class="searchbar">
+      <input id="city" placeholder="Search by city, e.g. Tirupati">
+      <button onclick="loadHalls()">Search Halls</button>
+    </div>
+  </div>
+</section>
+
+<section id="halls" class="section">
+  <div class="section-head"><div><p class="eyebrow">AVAILABLE VENUES</p><h2>Explore function halls</h2></div></div>
+  <div id="hallGrid" class="grid"></div>
+</section>
+
+<section id="how" class="section alt">
+  <p class="eyebrow">SIMPLE PROCESS</p><h2>Book in 4 steps</h2>
+  <div class="steps">
+    <div><b>01</b><h3>Search</h3><p>Find halls by city and capacity.</p></div>
+    <div><b>02</b><h3>Choose date</h3><p>Check whether your date is available.</p></div>
+    <div><b>03</b><h3>Book</h3><p>Submit your event and guest details.</p></div>
+    <div><b>04</b><h3>Pay</h3><p>Complete payment using the gateway.</p></div>
+  </div>
+</section>
+<footer>© 2026 HallBook • Function Hall Booking System</footer>
+<script src="/js/main.js"></script>
+</body>
+</html>

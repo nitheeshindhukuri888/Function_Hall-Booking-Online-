@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hall Details | HallBook</title><link rel="stylesheet" href="/css/style.css"></head>
+<body><header class="nav"><a class="brand" href="/">Hall<span>Book</span></a><nav><a href="/">Home</a><a href="/dashboard.html">Dashboard</a></nav></header>
+<main class="section" id="content">Loading...</main>
+<script>
+const id=new URLSearchParams(location.search).get('id');
+async function init(){const r=await fetch('/api/halls/'+id);const h=await r.json();
+content.innerHTML=`<div class="detail"><img src="${h.imageUrl}" alt="${h.name}"><div><p class="eyebrow">${h.city}</p><h1>${h.name}</h1><p>${h.description||''}</p><p><b>Capacity:</b> ${h.capacity} guests</p><p><b>Price:</b> ₹${Number(h.pricePerDay).toLocaleString('en-IN')} / day</p><p><b>Amenities:</b> ${h.amenities||'—'}</p><a class="btn" href="/booking.html?hallId=${h.id}">Book this hall</a></div></div>`}init();
+</script></body></html>
